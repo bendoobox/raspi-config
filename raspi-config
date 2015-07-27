@@ -548,7 +548,7 @@ do_serial() {
 
 disable_raspi_config_at_boot() {
   if [ -e /etc/profile.d/raspi-config.sh ]; then
-    rm -f /etc/profile.d/raspi-config.sh
+    # rm -f /etc/profile.d/raspi-config.sh
     sed -i /etc/inittab \
       -e "s/^#\(.*\)#\s*RPICFG_TO_ENABLE\s*/\1/" \
       -e "/#\s*RPICFG_TO_DISABLE/d"
