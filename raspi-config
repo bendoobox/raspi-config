@@ -837,7 +837,7 @@ EOF
     cat << EOF | debconf-set-selections
 locales   locales/default_environment_locale select       $DEBLANGUAGE
 EOF
-    echo "LANGUAGE=$DEBLANGUAGE" >> /home/pi/.profile
+    echo "LANGUAGE=$DEBLANGUAGE" >> /home/pi/.xsessionrc
   fi
 
   if [ -n "$NOOBSKEYBOARD" -a "$NOOBSKEYBOARD" != "gb" ]; then
