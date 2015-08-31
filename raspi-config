@@ -562,8 +562,6 @@ enable_boot_to_bendoobox() {
     sed /etc/lightdm/lightdm.conf -i -e "s/^#autologin-user=.*/autologin-user=pi/"
     disable_boot_to_scratch
     disable_raspi_config_at_boot
-    sync
-    reboot
   fi
 }
 
@@ -851,6 +849,11 @@ EOF
     dpkg-reconfigure -f noninteractive keyboard-configuration
     invoke-rc.d keyboard-setup start
   fi
+  
+  # reboot after setting keymap
+  sync
+  reboot
+  
   return 0
 }
 
