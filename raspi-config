@@ -562,6 +562,9 @@ enable_boot_to_bendoobox() {
     sed /etc/lightdm/lightdm.conf -i -e "s/^#autologin-user=.*/autologin-user=pi/"
     disable_boot_to_scratch
     disable_raspi_config_at_boot
+    echo "Rebooting to finish installation."
+    sync
+    reboot
   fi
 }
 
