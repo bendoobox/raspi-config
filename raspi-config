@@ -838,6 +838,7 @@ EOF
 locales   locales/default_environment_locale select       $DEBLANGUAGE
 EOF
     echo "LANGUAGE=$DEBLANGUAGE" >> /home/pi/.xsessionrc
+    export LANGUAGE=$DEBLANGUAGE;
   fi
 
   if [ -n "$NOOBSKEYBOARD" -a "$NOOBSKEYBOARD" != "gb" ]; then
