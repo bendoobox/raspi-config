@@ -562,9 +562,6 @@ enable_boot_to_bendoobox() {
     sed /etc/lightdm/lightdm.conf -i -e "s/^#autologin-user=.*/autologin-user=pi/"
     disable_boot_to_scratch
     disable_raspi_config_at_boot
-    echo "Rebooting to finish installation."
-    sync
-    reboot
   fi
 }
 
@@ -841,7 +838,9 @@ EOF
 locales   locales/default_environment_locale select       $DEBLANGUAGE
 EOF
     echo "LANGUAGE=$DEBLANGUAGE" >> /home/pi/.xsessionrc
+    echo "LANG=$DEBLANGUAGE" >> /home/pi/.xsessionrc
     export LANGUAGE=$DEBLANGUAGE;
+    export LANG=$DEBLANGUAGE;
   fi
 
   if [ -n "$NOOBSKEYBOARD" -a "$NOOBSKEYBOARD" != "gb" ]; then
