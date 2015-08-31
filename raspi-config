@@ -562,6 +562,8 @@ enable_boot_to_bendoobox() {
     sed /etc/lightdm/lightdm.conf -i -e "s/^#autologin-user=.*/autologin-user=pi/"
     disable_boot_to_scratch
     disable_raspi_config_at_boot
+    sync
+    reboot
   fi
 }
 
@@ -780,7 +782,7 @@ do_apply_os_config() {
       enable_boot_to_scratch
     fi
     if printf "%s" "$NOOBSFLAVOUR" | grep -q "Bendoo Box"; then
-      enable_boot_to_bendoobox
+      
     fi
   fi
 
