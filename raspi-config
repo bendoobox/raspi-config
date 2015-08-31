@@ -782,7 +782,7 @@ do_apply_os_config() {
       enable_boot_to_scratch
     fi
     if printf "%s" "$NOOBSFLAVOUR" | grep -q "Bendoo Box"; then
-      
+      enable_boot_to_bendoobox
     fi
   fi
 
